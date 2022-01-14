@@ -48,17 +48,16 @@ public class World {
     }
 
     public Aeroport findNearestAirport(double latitude, double longitude){
-        for(int i=0; i<list.size(); i++){
-            double latitude2 = list.get(i).getLatitude();
-            double longitude2 = list.get(i).getLongitude();
-            Aeroport B = new Aeroport B
-            double norme = Distance(latitude, longitude, latitude2, longitude2);
-            double distance_min = 100000.100;
-
-            if(norme < distance_min){
-                distance_min = norme;
+            double norme;
+            double distance_min = Distance(latitude, longitude, list.get(0).getLatitude(), list.get(0).getLongitude());
+            Aeroport Nearest = list.get(0);
+            for(Aeroport A : list) {
+                norme = Distance(latitude, longitude, A.getLatitude(), A.getLongitude());
+                if (norme < distance_min) {
+                    distance_min = norme;
+                    Nearest = A;
+                }
             }
-        }
-        return A;
+        return Nearest;
     }
 }

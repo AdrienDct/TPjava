@@ -16,5 +16,6 @@ public class main {
 
     World w = new World("./data/airport-codes_no_comma.csv");
     Aeroport Paris = w.findNearestAirport(2.316, 48.866);
+    System.out.println(Paris);
     }
 }
