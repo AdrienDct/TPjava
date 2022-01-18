@@ -8,7 +8,7 @@ public class Aeroport {
     public Aeroport(String IATA, String name, String country, double latitude, double longitude){
         this.IATA = IATA;
         this.name = name;
-        this. country = country;
+        this.country = country;
         this.latitude = latitude;
         this.longitude = longitude;
     }

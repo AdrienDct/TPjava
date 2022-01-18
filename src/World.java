@@ -15,7 +15,7 @@ public class World {
                 s=s.replaceAll("\"",""); //Supprime les guillemets séparant les champs de données GPS
                 String fields[]=s.split(",");
                 if(fields[1].equals("large_airport")){
-                    String IATA = fields[0];
+                    String IATA = fields[9];
                     String name = fields[2];
                     String country = fields[5];
                     String latitudeS = fields[12];
@@ -59,5 +59,20 @@ public class World {
                 }
             }
         return Nearest;
+    }
+
+    public Aeroport findByCode(String code){
+        for(Aeroport A : list ){
+            //if(A.getIATA() == code){
+            if(A.getIATA().compareToIgnoreCase(code) == 0){
+                return A;
+            }
+        }
+        System.out.println("This IATA hasn't been found on the list");
+        return null;
+    }
+
+    public ArrayList getList(){
+        return list;
     }
 }

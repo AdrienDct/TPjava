@@ -15,7 +15,15 @@ public class main {
          */
 
     World w = new World("./data/airport-codes_no_comma.csv");
-    Aeroport Paris = w.findNearestAirport(2.316, 48.866);
-    System.out.println(Paris);
+    System.out.println("We found " + w.getList().size() + " airports");
+    Aeroport paris = w.findNearestAirport(2.316, 48.866);
+    Aeroport cdg = w.findByCode("CDG");
+    double distanceCDG = w.Distance(2.316, 48.866, cdg.getLongitude(), cdg.getLatitude());
+    double distanceParis = w.Distance(2.316, 48.866, paris.getLongitude(), paris.getLatitude());
+
+    System.out.println("Researching aiport 'CDG' returned : " + cdg);
+    System.out.println("Nearest airport from Paris : " + paris);
+    System.out.println("Distance between HGA and CDG : " + distanceCDG);
+    System.out.println("Distance between HGA and Paris : " + distanceParis);
     }
 }
