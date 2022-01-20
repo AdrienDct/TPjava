@@ -63,8 +63,7 @@ public class World {
 
     public Aeroport findByCode(String code){
         for(Aeroport A : list ){
-            //if(A.getIATA() == code){
-            if(A.getIATA().compareToIgnoreCase(code) == 0){
+            if(A.getIATA().equals(code)){
                 return A;
             }
         }
