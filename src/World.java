@@ -38,7 +38,7 @@ public class World {
 
 
     public double Distance(double latitude1, double longitude1, double latitude2, double longitude2){
-        double calcul1 = Math.pow( (latitude1 - latitude2), 2);      //Puissance 2
+        double calcul1 = Math.pow( (latitude2 - latitude1), 2);
         double calcul2 = Math.pow(
                         ((longitude2 - longitude1)
                         + (Math.cos( (longitude2 + longitude1)/2) ))
