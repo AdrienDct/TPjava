@@ -1,6 +1,5 @@
 import javafx.animation.AnimationTimer;
 import javafx.geometry.Point3D;
-import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
@@ -13,13 +12,16 @@ import java.util.ArrayList;
 
 public class Earth extends Group{
     private Sphere sph;
-    private Object sphere;
+    private Sphere redSphere;
+    private Sphere yellowSphere;
     private Object animationTimer;
+    private Object animationTimer2;
     private Rotate ry;
-    private ArrayList<Sphere> yellowSphere;
+    private ArrayList<Sphere> YellowSphere;
     private String path;
     PhongMaterial material;
-    private double rayon;
+    PhongMaterial AeroportMaterial;
+    private double rayon = 5;
     private double X;
     private double Y;
     private double Z;
@@ -45,19 +47,36 @@ public class Earth extends Group{
     }
 
     public Sphere createSphere(Aeroport a, Color color){
-        PhongMaterial sphereAeroportMaterial = new PhongMaterial(color);
-        Sphere sphereAeroport = new Sphere(5);
-        sphereAeroport.setMaterial(sphereAeroportMaterial);
-        X = rayon * Math.cos(a.getLatitude()- 13) * Math.sin(a.getLongitude());
-        Y = - rayon * Math.sin(a.getLatitude() - 13);
-        Z = - rayon * Math.cos(a.getLatitude() - 13) * Math.sin(a.getLongitude());
+        AeroportMaterial = new PhongMaterial(color);
+        Sphere sphereAeroport = new Sphere(50);
+        sphereAeroport.setMaterial(AeroportMaterial);
+        X = Math.toDegrees(rayon * Math.cos(a.getLatitude() - 13) * Math.sin(a.getLongitude()));
+        Y = Math.toDegrees(- rayon * Math.sin(a.getLatitude() - 13));
+        Z = Math.toDegrees(- rayon * Math.cos(a.getLatitude() - 13) * Math.sin(a.getLongitude()));
         sphereAeroport.getTransforms().add(new Translate(X, Y, Z));
+
+        System.out.println("X : " + X);
+        System.out.println("Y : " + Y);
+        System.out.println("Z : " + Z);
+        System.out.println("Latitude : " + a.getLatitude());
+        System.out.println("Longitude : " + a.getLongitude() + '\n');
 
         return sphereAeroport;
     }
 
     public void displayRedSphere(Aeroport a){
-        Node redSphere = createSphere(a, Color.RED);
+        Sphere redSphere = createSphere(a, Color.RED);
+        Point3D pointRotation = new Point3D(0, 1, 0);
+        Rotate ry = new Rotate(0, pointRotation);
+        redSphere.getTransforms().add(ry);
         this.getChildren().add(redSphere);
+    }
+
+    public void displayYellowSphere(Aeroport a){
+        Sphere redSphere = createSphere(a, Color.YELLOW);
+        Point3D pointRotation = new Point3D(0, 1, 0);
+        Rotate ry = new Rotate(0, pointRotation);
+        yellowSphere.getTransforms().add(ry);
+        this.getChildren().add(yellowSphere);
     }
 }
