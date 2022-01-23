@@ -24,6 +24,7 @@
 ----
 
 ## Erreurs et debug : 
+### Placement des boules rouges
 Le placement des boules rouges est aléatoire. Je leur ai donné une taille de 50 pour qu'elles soient plus facilement repérables si elles ne sont pas crées à l'intérieur de la terre.
 Nous pouvons voir lors d'un clic qu'il est retourné dans la console :
  1. l'aéroport le plus proche
@@ -37,6 +38,14 @@ Les valeurs de X, Y et Z devraient placer la boule rouge sur la terre au bon emp
 
 De plus, je n'ai pas réussi à faire tourner ces boules en même temps que la rotation de la terre.
 Après plusieurs heures de recherches j'ai abandonné et décidé de continuer sur le reste du TP.
+
+
+### Le chemin de la texture de la sphère
+Ci-dessous, extrait de la classe "main" appelant le constructeur Earth pour créer la sphère terre et appliquer la texture dessus.
+
+![path](https://user-images.githubusercontent.com/97739867/150702436-226c55f9-244c-41b9-97df-08aa4bf96e9d.PNG)
+
+On peut voir que cette texture n'est pas dans le dossier "data", ou il aurait dû être, car en utilisant le chemin "./data/..." cela ne fonctionnait pas, pourtant c'est ce qui est utilisé pour joindre le csv des aéroports et le JSON.
 
 ----
 
