@@ -58,8 +58,6 @@ public class Earth extends Group{
         System.out.println("X : " + X);
         System.out.println("Y : " + Y);
         System.out.println("Z : " + Z);
-        System.out.println("Latitude : " + a.getLatitude());
-        System.out.println("Longitude : " + a.getLongitude() + '\n');
 
         return sphereAeroport;
     }

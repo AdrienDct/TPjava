@@ -1,6 +1,6 @@
 # Projet Java - Adrien Duchâtel 3DA
 
-![earth](https://github.com/AdrienDct/TPjava/tree/main/Img/Earth.PNG)
+![Earth](https://user-images.githubusercontent.com/97739867/150701543-a12090eb-45d5-4618-8c7a-9184087933b6.PNG)
 
 ----
 
@@ -30,5 +30,10 @@ Nous pouvons voir lors d'un clic qu'il est retourné dans la console :
  2. La valeur de X, calculée à partir de la longitude et latitude de l'aéroport.
  3. La valeur de Y, idem.
  4. La valeur de Z, idem.
- 5. 
+
+Les valeurs de X, Y et Z devraient placer la boule rouge sur la terre au bon emplacement, mais comme on peut le voir sur le screen ci-dessous, des boules ne sont pas collés à la terre, d'autre sont à l'intérieur, et jamais à proximité de l'endroit du clic.
+![RedBalls](https://user-images.githubusercontent.com/97739867/150701642-2b95dc65-7e3f-411a-a0d8-d627af885b2f.PNG)
+De plus, je n'ai pas réussi à faire tourner ces boules en même temps que la rotation de la terre.
+Après plusieurs heures de recherches j'ai abandonné et décidé de continuer sur le reste du TP.
+
 
