@@ -1,6 +1,6 @@
 # Projet Java - Adrien Duchâtel 3DA
 
-![earth](./Img/earth.PNG)
+![earth](https://github.com/AdrienDct/TPjava/tree/main/Img/Earth.PNG)
 
 ----
 
